@@ -10,15 +10,15 @@ import (
 )
 
 /*
- * Complete the 'simpleArraySum' function below.
+ * Complete the 'aVeryBigSum' function below.
  *
- * The function is expected to return an INTEGER.
- * The function accepts INTEGER_ARRAY ar as parameter.
+ * The function is expected to return a LONG_INTEGER.
+ * The function accepts LONG_INTEGER_ARRAY ar as parameter.
  */
 
-func simpleArraySum(ar []int32) int32 {
+func aVeryBigSum(ar []int64) int64 {
 	// Write your code here
-	result := int32(0)
+	result := int64(0)
 	for i, _ := range ar {
 		result = result + ar[i]
 	}
@@ -40,16 +40,15 @@ func main() {
 
 	arTemp := strings.Split(strings.TrimSpace(readLine(reader)), " ")
 
-	var ar []int32
+	var ar []int64
 
 	for i := 0; i < int(arCount); i++ {
-		arItemTemp, err := strconv.ParseInt(arTemp[i], 10, 64)
+		arItem, err := strconv.ParseInt(arTemp[i], 10, 64)
 		checkError(err)
-		arItem := int32(arItemTemp)
 		ar = append(ar, arItem)
 	}
 
-	result := simpleArraySum(ar)
+	result := aVeryBigSum(ar)
 
 	fmt.Fprintf(writer, "%d\n", result)
 
